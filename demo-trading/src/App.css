@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #11131A;
+  color: white;
+}
+
+.App {
+  width: 320px;
+  margin: 0 auto;
+  /* outline: 2px dotted rgb(255, 148, 148); */
+}
+
+.WalletContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.WalletCard {
+  width: 300px;
+  height: 50px;
+  background-color: #191c28;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.TradingViewContainer {
+  width: 320px;
+  height: 440px;
+  margin: 0 auto;
+  /* outline: 1px solid deeppink; */
+}
+
+.BtnContainer {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.BtnBuy,
+.BtnSell {
+  width: 100px;
+  height: 40px;
+  font-size: 24px;
+  border: none;
+  color: white;
+  letter-spacing: 5px;
+}
+
+.BtnBuy {
+  background-color: #089981;
+  border-radius: 10px;
+  border: 2px solid #056555;
+  margin-right: 40px;
+}
+
+.BtnSell {
+  background-color: #F23645;
+  border-radius: 10px;
+  border: 2px solid #9c222c;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  text-align: center;
+}
+
+span {
+  color: #089981;
+}
+
+
+.CheckboxContainer {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.CheckboxContainer input[type='checkbox'] {
+  width: 20px;
+  height: 20px; 
+  margin-right: 10px; 
+  cursor: pointer; 
+}
+.TradeContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 10px;
+}
+
+.TradeInputContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.TradeInputContainer input {
+  width: 100px; 
+  height: 40px;
+  border-radius: 10px; 
+  border: 2px solid #056555;
+  background-color: #191c28;
+  color: white; 
+  padding: 0 10px; 
+  font-size: 16px; 
+  margin-right: 20px;
+}
+
+.TradeInputContainer input:focus {
+  outline: none; 
+  border-color: #089981; 
+}
