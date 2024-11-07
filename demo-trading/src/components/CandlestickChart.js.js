@@ -1,9 +1,9 @@
 // MyCandlestickChart.js
 import React from 'react';
 import Chart from 'react-apexcharts';
+import axios from 'axios';
 
 const CandleChart = () => {
-
   const options = {
     chart: {
       type: 'candlestick',
@@ -27,24 +27,28 @@ const CandleChart = () => {
     {
       data: [
         {
-          x: new Date('2024-10-20').getTime(),
+          x: new Date('2024-11-20').getTime(),
           y: [135, 140, 130, 138]
         },
         {
-          x: new Date('2024-10-21').getTime(),
+          x: new Date('2024-11-21').getTime(),
           y: [137, 145, 135, 142]
         },
         {
-          x: new Date('2024-10-22').getTime(),
+          x: new Date('2024-11-22').getTime(),
           y: [141, 150, 140, 148]
         },
         {
-          x: new Date('2024-10-23').getTime(),
+          x: new Date('2024-11-23').getTime(),
           y: [147, 155, 145, 150]
         },
         {
-          x: new Date('2024-10-24').getTime(),
+          x: new Date('2024-11-24').getTime(),
           y: [149, 160, 148, 155]
+        },
+        {
+          x: new Date('2024-11-25').getTime(),
+          y: [160, 165, 130, 135]
         }
       ]
     }
