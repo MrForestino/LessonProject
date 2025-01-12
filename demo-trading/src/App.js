@@ -1,10 +1,9 @@
-import './App.css';
+import React, { useState } from 'react';
 import BtnBuy from './components/BtnBuy';
 import BtnSell from './components/BtnSell';
 import Wallet from './components/Wallet';
-import TradingWidget from './components/TradingViewWidget';
 import CandleChart from './components/CandlestickChart.js';
-import { useState } from 'react';
+import './App.css';
 
 function App() {
   const [balance, setBalance] = useState(100000);
@@ -17,11 +16,11 @@ function App() {
     const totalCost = amountToTrade * currentPrice;
 
     if (totalCost <= balance) {
-      setBalance(balance - totalCost); 
+      setBalance(balance - totalCost);
       setCryptoAmount(cryptoAmount + amountToTrade);
-      alert(`Kupiłeś ${amountToTrade} BTC за ${totalCost}$`);
+      alert(`Bought ${amountToTrade} ETH for ${totalCost}$`);
     } else {
-      alert(`Nie masz wystarczająco kosztów!`);
+      alert(`Insufficient funds! You only have ${balance}$`);
     }
   };
 
@@ -29,12 +28,12 @@ function App() {
     const amountToSell = sellAll ? cryptoAmount : amountToTrade;
 
     if (cryptoAmount >= amountToSell) {
-      const totalEarnings = amountToSell * currentPrice; 
+      const totalEarnings = amountToSell * currentPrice;
       setBalance(balance + totalEarnings);
       setCryptoAmount(cryptoAmount - amountToSell);
-      alert(`Sprzedano ${amountToSell} BTC за ${totalEarnings}$`);
+      alert(`Sold ${amountToSell} ETH for ${totalEarnings}$`);
     } else {
-      alert('Nie masz wystarczająco waluty do sprzedaży!');
+      alert('Not enough cryptocurrency to sell!');
     }
   };
 
@@ -43,39 +42,40 @@ function App() {
       <h4>Go Trade</h4>
 
       <div className='WalletContainer'>
-        <Wallet balance={balance} />
+        <Wallet balance={balance} cryptoAmount={cryptoAmount} />
       </div>
 
       <div className="TradingViewContainer">
-        <TradingWidget setCurrentPrice={setCurrentPrice} />
-      </div>
-      <div className='TradeContainer'>
-      <div className='TradeInputContainer'>
-        <input
-          type="number"
-          min="0.5"
-          value={amountToTrade}
-          onChange={(e) => setAmountToTrade(Number(e.target.value))}
-        />
+        <CandleChart setCurrentPrice={setCurrentPrice} />
       </div>
 
-      <div className='CheckboxContainer'>
-        <label>
-          <input 
-            type="checkbox" 
-            checked={sellAll} 
-            onChange={() => setSellAll(!sellAll)}
+      <div className='TradeContainer'>
+        <div className='TradeInputContainer'>
+          <input
+            type="number"
+            min="0.5"
+            value={amountToTrade}
+            onChange={(e) => setAmountToTrade(Number(e.target.value))}
+            max={balance / currentPrice}
           />
-          Sell All
-        </label>
-      </div>
+        </div>
+
+        <div className='CheckboxContainer'>
+          <label>
+            <input 
+              type="checkbox" 
+              checked={sellAll} 
+              onChange={() => setSellAll(!sellAll)}
+            />
+            Sell All
+          </label>
+        </div>
       </div>
 
       <div className='BtnContainer'>
         <BtnBuy onBuy={handleBuy} />
         <BtnSell onSell={handleSell} />
       </div>
-      <CandleChart/>
     </div>
   );
 }

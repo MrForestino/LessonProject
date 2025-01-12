@@ -5,69 +5,100 @@
 }
 
 body {
-  background-color: #11131A;
-  color: white;
+  background-color: #0D1117;
+  color: #C9D1D9;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .App {
-  width: 320px;
-  margin: 0 auto;
-  /* outline: 2px dotted rgb(255, 148, 148); */
+  width: 360px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #161B22;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .WalletContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px 0;
+  padding: 20px 0;
 }
 
 .WalletCard {
-  width: 300px;
-  height: 50px;
-  background-color: #191c28;
-  border-radius: 10px;
-  padding: 10px 0;
+  width: 320px;
+  height: auto;
+  background-color: #21262D;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.WalletCard h2 {
+  margin: 10px 0;
+  color: #58A6FF;
 }
 
 .TradingViewContainer {
   width: 320px;
-  height: 440px;
+  height: 465px;
   margin: 0 auto;
-  /* outline: 1px solid deeppink; */
+  border: 1px solid #30363D;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .BtnContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 15px 0;
 }
 
 .BtnBuy,
 .BtnSell {
-  width: 100px;
-  height: 40px;
-  font-size: 24px;
+  width: 120px;
+  height: 45px;
+  font-size: 18px;
+  font-weight: bold;
   border: none;
   color: white;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
+  cursor: pointer;
 }
 
 .BtnBuy {
-  background-color: #089981;
-  border-radius: 10px;
-  border: 2px solid #056555;
-  margin-right: 40px;
+  background-color: #198754;
+  border-radius: 8px;
+  border: 2px solid #146C43;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.BtnBuy:hover {
+  background-color: #1DAE61;
+  transform: scale(1.05);
 }
 
 .BtnSell {
-  background-color: #F23645;
-  border-radius: 10px;
-  border: 2px solid #9c222c;
+  background-color: #DC3545;
+  border-radius: 8px;
+  border: 2px solid #A71D2A;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.BtnSell:hover {
+  background-color: #E64954;
+  transform: scale(1.05);
 }
 
 h1 {
-  font-size: 26px;
+  font-size: 28px;
+  text-align: center;
+  color: #58A6FF;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -75,47 +106,52 @@ h2 {
 }
 
 span {
-  color: #089981;
+  color: #58A6FF;
 }
-
 
 .CheckboxContainer {
   display: flex;
   align-items: center;
   margin: 10px 0;
+  justify-content: center;
 }
 
 .CheckboxContainer input[type='checkbox'] {
   width: 20px;
-  height: 20px; 
-  margin-right: 10px; 
-  cursor: pointer; 
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  accent-color: #58A6FF;
 }
-.TradeContainer{
+
+.TradeContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0 10px;
+  margin: 15px 0;
+  flex-direction: column;
 }
 
 .TradeInputContainer {
   display: flex;
   justify-content: center;
+  margin-bottom: 15px;
 }
 
 .TradeInputContainer input {
-  width: 100px; 
-  height: 40px;
-  border-radius: 10px; 
-  border: 2px solid #056555;
-  background-color: #191c28;
-  color: white; 
-  padding: 0 10px; 
-  font-size: 16px; 
-  margin-right: 20px;
+  width: 120px;
+  height: 45px;
+  border-radius: 8px;
+  border: 2px solid #30363D;
+  background-color: #21262D;
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+  text-align: center;
 }
 
 .TradeInputContainer input:focus {
-  outline: none; 
-  border-color: #089981; 
+  outline: none;
+  border-color: #58A6FF;
+  box-shadow: 0 0 5px rgba(88, 166, 255, 0.7);
 }
